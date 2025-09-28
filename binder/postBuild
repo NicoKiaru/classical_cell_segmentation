@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# Enable jupyter extensions
+jupyter nbextension enable --py widgetsnbextension
+
+# Set up virtual display for napari
+echo "export DISPLAY=:99.0" >> ~/.bashrc
+echo "Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &" >> ~/.bashrc
