@@ -1,8 +1,26 @@
 #!/bin/bash
 
-# Enable jupyter extensions
-jupyter nbextension enable --py widgetsnbextension
+set -euo pipefail
 
-# Set up virtual display for napari
-echo "export DISPLAY=:99.0" >> ~/.bashrc
-echo "Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &" >> ~/.bashrc
+# Create Desktop directory if it doesn't exist
+mkdir -p ${HOME}/Desktop
+
+# Create a desktop launcher for napari (optional but nice to have)
+cat > ${HOME}/Desktop/napari.desktop << EOF
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=napari
+Comment=Multi-dimensional image viewer
+Exec=napari
+Icon=applications-python
+Terminal=false
+StartupNotify=true
+Categories=Science;Development;
+EOF
+
+# Make the desktop file executable
+chmod +x ${HOME}/Desktop/napari.desktop
+
+# Optional: Apply Xfce settings for better desktop experience
+mkdir -p ${HOME}/.config/xfce4/xfconf/xfce-perchannel-xml

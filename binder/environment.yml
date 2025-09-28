@@ -1,19 +1,20 @@
-name: cell-segmentation
 channels:
   - conda-forge
 dependencies:
-  - python=3.11  # Note: Binder may not support 3.13 yet
-  - pip
+  - python=3.12
+  - napari
+  - pyqt
+  - scikit-image
   - numpy
   - scipy
-  - scikit-image
   - matplotlib
   - pillow
   - tifffile
-  - napari
-  - pyqt5  # PyQt5 tends to work better in Binder than PyQt6
+  - pandas
   - jupyterlab
   - ipywidgets
-  - xvfbwrapper  # For virtual display
+  # Required for desktop view on mybinder.org
+  - websockify
+  - pip
   - pip:
-    - napari[all]
+    - jupyter-remote-desktop-proxy
