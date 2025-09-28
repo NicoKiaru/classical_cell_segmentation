@@ -1,0 +1,24 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+data/
+oridata/
+lightning_logs/
+processed_data/
+checkpoints_zstack/
+samples_zstack/
+.idea/
+*.egg-info
+
+*.pth
+*.png
+*.tif
+
+# Virtual environments
+.venv
+uv.lock
+
+.ipynb_checkpoints/
