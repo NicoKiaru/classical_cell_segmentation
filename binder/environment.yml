@@ -1,20 +1,14 @@
 channels:
   - conda-forge
 dependencies:
-  - python=3.12
-  - napari
-  - pyqt
-  - scikit-image
+  - python=3.11
   - numpy
   - scipy
+  - scikit-image
   - matplotlib
   - pillow
   - tifffile
   - pandas
-  - jupyterlab
+  - jupyterlab>=3
   - ipywidgets
-  # Required for desktop view on mybinder.org
-  - websockify
-  - pip
-  - pip:
-    - jupyter-remote-desktop-proxy
+  - jupyter
